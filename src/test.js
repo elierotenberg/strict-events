@@ -1,15 +1,5 @@
-Strict Events
-=============
+const createEventsClass = require('../');
 
-Yet another `EventEmitter` like, with a few gimmicks:
-
-- You define a finite set of emittable events, and you make it an Events class
-
-- An Events object derives two objects, Emitter and Listener, to separate concerns and do better typechecks
-
-Extensive checks occur within `process.env.NODE_ENV='development'` and are ignored within `process.env.NODE_ENV='production'`.
-
-```js
 let test;
 
 // define a finite events set.
@@ -68,7 +58,6 @@ count.should.be.exactly(5);
 listener.off(ref);
 emitter.trigger(EVENTS.C, { incr: 42 });
 count.should.be.exactly(5);
-
 test = false;
 try {
   // this event is not in the predefined set: it will throw
@@ -85,4 +74,3 @@ test = false;
 // this won't call the previously bind callback
 events.trigger(EVENTS.A, {});
 test.should.be.false;
-```
