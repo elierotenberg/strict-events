@@ -1,4 +1,4 @@
-function createEvents(EVENTS, __DEV__) {
+function createEvents(EVENTS) {
   let REV_EVENTS;
   if(__DEV__) {
     EVENTS.should.be.an.Object;

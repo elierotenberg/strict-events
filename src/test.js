@@ -13,9 +13,8 @@ const EVENTS = {
 // alternatively you could write
 // const EVENTS = _.invert(['A', 'B', 'C']);
 
-// create a new Events class for this events set, and activate debugging errors
-const Events = createEventsClass(EVENTS, true);
-// to disable debugging, just don't pass a 2nd argument or pass false
+// create a new Events class for this events set
+const Events = createEventsClass(EVENTS);
 
 // instanciate a new Events object
 const events = new Events();
